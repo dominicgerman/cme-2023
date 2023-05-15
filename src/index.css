@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  h1 {
+    @apply text-4xl font-bold mt-4 mb-6;
+  }
+  h2 {
+    @apply text-3xl mt-6 mb-2;
+  }
+  h3 {
+    @apply text-2xl mt-6 mb-2;
+  }
+  h4 {
+    @apply text-xl mt-6 mb-2;
+  }
+}
+/* DON'T USE IMPORT STATEMENT IF USING WP */
+/* @import url('https://fonts.googleapis.com/css2?family=Forum&family=Rubik:wght@400;500&display=swap'); */
