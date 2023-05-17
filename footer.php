@@ -3,13 +3,13 @@
         <img src="<?php echo get_theme_file_uri('/images/logo.png') ?>" alt="Constellation men's Ensemble logo" height="78px" width="78px">
         <div class="flex flex-col font-forum text-lg gap-5">
             <p>
-                <a href="#">Singers</a>
+                <a href="<?php echo get_home_url(); ?>/about#singers">Singers</a>
             </p>
             <p>
-                <a href="#">Composers</a>
+                <a href="<?php echo get_home_url(); ?>/meet-the-composers">Composers</a>
             </p>
             <p>
-                <a href="#">Supporters</a>
+                <a href="<?php echo get_home_url(); ?>/support#page-content">Supporters</a>
             </p>
         </div>
         <div class="flex items-start gap-4 justify-end col-span-4">

@@ -23,8 +23,7 @@
       "lineHeight": false,
       "textTransform": false,
       "dropCap": false,
-      "customFontSize": false,
-      "fontSizes": []
+      "customFontSize": false
     },
     "blocks": {
       "core/button": {
@@ -54,7 +53,7 @@
         },
         {
           "slug": "white",
-          "color": "#FFFFFF",
+          "color": "#FAFAFA",
           "name": "White"
         },
         {

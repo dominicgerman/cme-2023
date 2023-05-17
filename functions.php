@@ -22,12 +22,17 @@ function add_support()
 add_action('after_setup_theme', 'add_support');
 
 
-add_filter('ai1wm_exclude_content_from_export', 'ignoreFiles');
-function ignoreFiles($exclude_filters)
-{
-    $exclude_filters[] = 'themes/cme-2023/node_modules';
+add_filter('ai1wm_exclude_themes_from_export', function ($exclude_filters) {
+    $exclude_filters[] = 'cme-2023/node_modules';
     return $exclude_filters;
+});
+
+function my_excerpt_length($length)
+{
+    return 30;
 }
+
+add_filter('excerpt_length', 'my_excerpt_length');
 
 
 // function cme_files()

@@ -7,11 +7,13 @@ while (have_posts()) {
 ?>
 
 
-    <div class="[&_h1 &_h3]:text-lightBlue">
-        <h1>
+    <div class="my-32 mx-44">
+        <h1 class="text-5xl font-semibold text-center">
             <?php the_title() ?>
         </h1>
-        <?php the_content() ?>
+        <div id="page-content" class="my-9 [&_.wp-block-button]:my-14  [&_p]:text-lg [&_p]:mb-9 [&_figure]:m-auto [&_.wp-block-gallery.has-nested-images_figure.wp-block-image_figcaption]:text-2xl [&_.wp-block-columns]:mb-24">
+            <?php the_content() ?>
+        </div>
     </div>
 <? }
 

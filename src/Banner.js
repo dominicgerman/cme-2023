@@ -20,10 +20,9 @@ function Banner() {
   useEffect(async () => {
     try {
       const response = await fetch(
-        'http://cme.local/wp-json/wp/v2/pages?parent=6&_embed'
+        'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=6&_embed'
       )
       const pagesArray = await response.json()
-      console.log(pagesArray)
       setSlideComponents(
         pagesArray
           .toSorted((a, b) => a.menu_order - b.menu_order)

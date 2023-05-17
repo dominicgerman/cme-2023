@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="bg-white font-rubik" <?php body_class(); ?>>
+<body class="bg-white font-rubik [&_h1]:font-forum [&_h2]:font-forum [&_h3]:font-forum [&_h4]:font-forum [&_figcaption]:font-forum" <?php body_class(); ?>>
 
     <?php
     $parentId = wp_get_post_parent_id(get_the_ID());

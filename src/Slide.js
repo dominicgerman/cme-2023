@@ -1,12 +1,14 @@
 import { React, useState, useEffect } from 'react'
 
 export default function Slide({ page }) {
-  console.log(page)
   return (
     <div
       className="h-[600px] w-full bg-cover bg-center grow shrink-0"
       style={{
-        backgroundImage: `linear-gradient(rgba(27, 33, 52, 0.5), rgba(27, 33, 52, 0.5)), url(${page._embedded['wp:featuredmedia'][0].source_url}`,
+        backgroundImage: `linear-gradient(rgba(27, 33, 52, 0.5), rgba(27, 33, 52, 0.5)), url(${
+          page._embedded['wp:featuredmedia'] &&
+          page._embedded['wp:featuredmedia'][0].source_url
+        }`,
       }}
     >
       <div className="mx-44 text-white">

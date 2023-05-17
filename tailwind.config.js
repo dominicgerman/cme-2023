@@ -5,7 +5,7 @@ module.exports = {
   plugins: [require('@tailwindcss/typography')],
   theme: {
     colors: {
-      white: colors.white,
+      white: 'rgb(250, 250, 250)',
       black: 'rgb(33, 33, 33)',
       lightBlue: 'rgb(81, 116, 152)',
       darkBlue: 'rgb(7, 12, 30)',
