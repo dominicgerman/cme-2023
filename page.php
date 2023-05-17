@@ -7,8 +7,10 @@ while (have_posts()) {
 ?>
 
 
-    <div class="">
-        <?php echo get_the_ID() ?>
+    <div class="[&_h1 &_h3]:text-lightBlue">
+        <h1>
+            <?php the_title() ?>
+        </h1>
         <?php the_content() ?>
     </div>
 <? }

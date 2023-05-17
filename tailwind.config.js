@@ -8,7 +8,7 @@ module.exports = {
       white: colors.white,
       black: 'rgb(33, 33, 33)',
       lightBlue: 'rgb(81, 116, 152)',
-      darkBlue: 'rgb(27, 34, 51)',
+      darkBlue: 'rgb(7, 12, 30)',
       gray: 'rgb(162, 162, 162)',
       darkGray: 'rgb(96, 96, 96)',
       orange: 'rgb(252, 73, 36)',

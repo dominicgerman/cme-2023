@@ -14,6 +14,7 @@ function add_support()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_post_type_support('page', 'excerpt');
     //   add_theme_support('editor-styles');
     add_editor_style(array('https://fonts.googleapis.com/css2?family=Forum&family=Rubik:wght@400;500&display=swap', 'build/index.css'));
 }
