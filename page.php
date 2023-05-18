@@ -7,7 +7,7 @@ while (have_posts()) {
 ?>
 
 
-    <div class="my-32 mx-44">
+    <div class="max-w-[1080px] mx-auto my-32">
         <h1 class="text-5xl font-semibold text-center">
             <?php the_title() ?>
         </h1>

@@ -14,7 +14,7 @@
     $navActive = 'font-medium underline underline-offset-8 decoration-lightBlue decoration-4'
     ?>
 
-    <div class="flex items-center shadow-sm h-20 px-20 justify-between">
+    <div class="flex items-center shadow-sm h-20 justify-between max-w-[1280px] mx-auto">
         <a href="<?php echo get_home_url(); ?>" class="font-forum text-3xl">
             <div class="flex items-center gap-4">
                 <img src="<?php echo get_theme_file_uri('/images/logo.png') ?>" alt="Constellation men's Ensemble logo" height="60px" width="60px">

@@ -17,11 +17,15 @@ function Banner() {
     },
   }
 
+  let API_URL = 'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=6&_embed'
+
+  if (process.env.NODE_ENV === 'development') {
+    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=6&_embed'
+  }
+
   useEffect(async () => {
     try {
-      const response = await fetch(
-        'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=6&_embed'
-      )
+      const response = await fetch(API_URL)
       const pagesArray = await response.json()
       setSlideComponents(
         pagesArray

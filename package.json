@@ -6,11 +6,11 @@
   "scripts": {
     "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
     "sync": "browser-sync start -p 'cme.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
-    "buildwp": "wp-scripts build",
     "build": "npm-run-all --sequential buildwp tailwindbuild",
-    "wpstart": "wp-scripts start src/index.js",
     "start": "npm-run-all --parallel wpstart tailwindwatch",
+    "buildwp": "wp-scripts build",
     "tailwindbuild": "tailwindcss -i ./src/index.css -o ./build/index.css --minify",
+    "wpstart": "wp-scripts start src/index.js",
     "tailwindwatch": "tailwindcss -i ./src/index.css -o ./build/index.css --watch --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
