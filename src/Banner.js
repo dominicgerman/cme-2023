@@ -1,9 +1,10 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState, useEffect, useRef } from 'react'
 import Slide from './Slide'
 
 function Banner() {
   const [slideIndex, setSlideIndex] = useState(0)
   const [slideComponents, setSlideComponents] = useState([])
+  const slider = useRef(null)
   const arrow = {
     enabled: {
       bg: 'bg-lightBlue',
@@ -32,20 +33,22 @@ function Banner() {
           .toSorted((a, b) => a.menu_order - b.menu_order)
           .map((page) => <Slide key={page.id} page={page} />)
       )
+      console.log(pagesArray)
     } catch (error) {
       console.error(error)
     }
   }, [])
 
   return (
-    <>
+    <div className="relative">
       <button
-        className={`h-12 w-12 rounded-full ${
+        className={`hidden lg:block h-12 w-12 rounded-full ${
           slideIndex > 0 ? arrow.enabled.bg : arrow.disabled.bg
-        } absolute top-1/2 left-16 -translate-y-1/2`}
+        } absolute top-1/2 left-16 -translate-y-1/2 z-10`}
         onClick={() => {
           if (slideIndex > 0) {
             setSlideIndex(slideIndex - 1)
+            slider.current.scroll(slider.current.scrollLeft - 1000, 0)
           }
         }}
       >
@@ -72,9 +75,14 @@ function Banner() {
           />
         </svg>
       </button>
-      <div className="flex">{slideComponents[slideIndex]}</div>
+      <div
+        ref={slider}
+        className="flex h-screen overflow-y-hidden overflow-x-auto scroll-smooth snap-x snap-mandatory"
+      >
+        {slideComponents}
+      </div>
       <button
-        className={`h-12 w-12 rounded-full ${
+        className={`hidden lg:block h-12 w-12 rounded-full ${
           slideIndex < slideComponents?.length - 1
             ? arrow.enabled.bg
             : arrow.disabled.bg
@@ -82,6 +90,7 @@ function Banner() {
         onClick={() => {
           if (slideIndex < slideComponents?.length - 1) {
             setSlideIndex(slideIndex + 1)
+            slider.current.scroll(slider.current.scrollLeft + 1000, 0)
           }
         }}
       >
@@ -110,7 +119,7 @@ function Banner() {
           />
         </svg>
       </button>
-      <div className="flex gap-2 absolute bottom-6 left-1/2 -translate-x-1/2">
+      <div className="flex gap-2 absolute bottom-[55%] lg:bottom-[20%] left-1/2 -translate-x-1/2">
         {slideComponents?.map((slideComponent, i) => (
           <div
             key={slideComponent.key}
@@ -120,7 +129,7 @@ function Banner() {
           ></div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<!-- <section>
-    <div class="h-[700px] relative">
+<section>
+    <div class="h-screen lg:h-[700px] relative">
         <div id="render-react-slider"></div>
     </div>
-</section> -->
+</section>
 </main>
 
 <?php
