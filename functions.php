@@ -29,7 +29,7 @@ add_filter('ai1wm_exclude_themes_from_export', function ($exclude_filters) {
 
 function my_excerpt_length($length)
 {
-    return 30;
+    return 12;
 }
 
 add_filter('excerpt_length', 'my_excerpt_length');

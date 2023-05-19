@@ -1,6 +1,9 @@
-import { React, useState, useEffect } from 'react'
+import { React, useRef } from 'react'
 
-export default function Slide({ page }) {
+export default function Slide({ page, index, isInViewport }) {
+  const ref = useRef()
+  isInViewport(ref, index)
+
   return (
     <div
       className="snap-start relative h-1/2 lg:h-[700px] w-screen bg-cover bg-center grow shrink-0"
@@ -12,7 +15,10 @@ export default function Slide({ page }) {
       }}
     >
       <div className="lg:mx-44 text-white w-full">
-        <div className="mt-36 ml-5 lg:m-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2">
+        <div
+          ref={ref}
+          className="mt-36 ml-5 lg:m-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2"
+        >
           <div
             className="lg:max-w-5xl md:text-4xl font-forum text-3xl lg:text-6xl lg:mb-8"
             dangerouslySetInnerHTML={{ __html: page.excerpt.rendered }}

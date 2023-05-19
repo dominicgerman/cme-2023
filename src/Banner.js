@@ -1,7 +1,14 @@
 import { React, useState, useEffect, useRef } from 'react'
+import isOnScreen from './isVisible'
 import Slide from './Slide'
 
 function Banner() {
+  let API_URL = 'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=6&_embed'
+
+  if (process.env.NODE_ENV === 'development') {
+    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=6&_embed'
+  }
+
   const [slideIndex, setSlideIndex] = useState(0)
   const [slideComponents, setSlideComponents] = useState([])
   const slider = useRef(null)
@@ -18,10 +25,10 @@ function Banner() {
     },
   }
 
-  let API_URL = 'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=6&_embed'
-
-  if (process.env.NODE_ENV === 'development') {
-    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=6&_embed'
+  const isInViewport = (ref, index) => {
+    if (isOnScreen(ref) === true) {
+      setSlideIndex(index)
+    }
   }
 
   useEffect(async () => {
@@ -31,16 +38,22 @@ function Banner() {
       setSlideComponents(
         pagesArray
           .toSorted((a, b) => a.menu_order - b.menu_order)
-          .map((page) => <Slide key={page.id} page={page} />)
+          .map((page, i) => (
+            <Slide
+              key={page.id}
+              page={page}
+              index={i}
+              isInViewport={isInViewport}
+            />
+          ))
       )
-      console.log(pagesArray)
     } catch (error) {
       console.error(error)
     }
   }, [])
 
   return (
-    <div className="relative">
+    <div className="relative h-[700px]">
       <button
         className={`hidden lg:block h-12 w-12 rounded-full ${
           slideIndex > 0 ? arrow.enabled.bg : arrow.disabled.bg
@@ -77,7 +90,7 @@ function Banner() {
       </button>
       <div
         ref={slider}
-        className="flex h-screen overflow-y-hidden overflow-x-auto scroll-smooth snap-x snap-mandatory"
+        className="flex h-screen overflow-y-hidden overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
       >
         {slideComponents}
       </div>
@@ -119,7 +132,7 @@ function Banner() {
           />
         </svg>
       </button>
-      <div className="flex gap-2 absolute bottom-[55%] lg:bottom-[20%] left-1/2 -translate-x-1/2">
+      <div className="flex gap-2 absolute bottom-[45%] lg:bottom-[20%] left-1/2 -translate-x-1/2">
         {slideComponents?.map((slideComponent, i) => (
           <div
             key={slideComponent.key}
