@@ -3,10 +3,11 @@ import isOnScreen from './isVisible'
 import Slide from './Slide'
 
 function Banner() {
-  let API_URL = 'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=6&_embed'
+  let API_URL =
+    'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=126&_embed'
 
   if (process.env.NODE_ENV === 'development') {
-    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=6&_embed'
+    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=126&_embed'
   }
 
   const [slideIndex, setSlideIndex] = useState(0)
@@ -53,7 +54,7 @@ function Banner() {
   }, [])
 
   return (
-    <div className="relative h-[700px]">
+    <div className="relative h-[350px] md:h-[500px] lg:h-[700px]">
       <button
         className={`hidden lg:block h-12 w-12 rounded-full ${
           slideIndex > 0 ? arrow.enabled.bg : arrow.disabled.bg
@@ -90,7 +91,7 @@ function Banner() {
       </button>
       <div
         ref={slider}
-        className="flex h-screen overflow-y-hidden overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
+        className="flex h-[350px] md:h-[500px] lg:h-[750px] overflow-y-hidden overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
       >
         {slideComponents}
       </div>
@@ -132,7 +133,7 @@ function Banner() {
           />
         </svg>
       </button>
-      <div className="flex gap-2 absolute bottom-[45%] lg:bottom-[20%] left-1/2 -translate-x-1/2">
+      <div className="flex gap-2 absolute bottom-[10%] left-1/2 -translate-x-1/2">
         {slideComponents?.map((slideComponent, i) => (
           <div
             key={slideComponent.key}

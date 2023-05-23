@@ -33,12 +33,12 @@
             <rect x="1.85791" y="0.443604" width="42" height="2" transform="rotate(45 1.85791 0.443604)" fill="black" />
         </svg>
         <nav class="hidden peer-checked:flex flex-col items-center justify-center gap-16 fixed top-0 left-1/2 -translate-x-1/2 text-2xl bg-white h-screen w-screen z-30 lg:flex lg:flex-row lg:static lg:text-lg lg:gap-12 lg:bg-opacity-0 lg:h-auto lg:w-auto lg:translate-x-0">
-            <a href="/season" class="<?php if (is_page('season') || is_front_page()) echo $navActive ?>">Season</a>
-            <a href="/about" class="<?php if (is_page('about')) echo $navActive ?>">About</a>
-            <a href="/listen" class="<?php if (is_page('listen')) echo $navActive ?>">Listen</a>
-            <a href="/support" class="<?php if (is_page('support')) echo $navActive ?>">Support</a>
+            <a href="/season" class="<?php if (is_page('season') || $parentId == 6) echo $navActive ?>">Season</a>
+            <a href="/about" class="<?php if (is_page('about') || $parentId == 9) echo $navActive ?>">About</a>
+            <a href="/listen" class="<?php if (is_page('listen')  || $parentId == 11) echo $navActive ?>">Listen</a>
+            <a href="/support" class="<?php if (is_page('support') || $parentId == 13) echo $navActive ?>">Support</a>
             <button class="bg-darkBlue text-white px-6 py-2 rounded-full">
-                <a href="https://interland3.donorperfect.net/weblink/WebLink.aspx?name=E353170&id=3">Give</a>
+                <a href="https://interland3.donorperfect.net/weblink/WebLink.aspx?name=E353170&id=3" target="_blank">Give</a>
             </button>
         </nav>
     </div>

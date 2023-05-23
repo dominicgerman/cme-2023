@@ -26,6 +26,29 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .text-shadow {
+    text-shadow: black -2px -2px;
+  }
+
+  .link-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--wp--preset--color--light-blue);
+  }
+
+  .mailchimp-form {
+    @apply flex flex-col items-center justify-center text-center px-2 gap-4;
+  }
+
+  .mailchimp-input {
+    @apply bg-darkBlue bg-opacity-0 border rounded-full border-gray h-[50px] w-[300px] px-4 text-lg;
+  }
+
+  .mailchimp-submit {
+    @apply text-3xl absolute -translate-x-10 translate-y-2;
+  }
 }
 /* DON'T USE IMPORT STATEMENT IF USING WP */
 /* @import url('https://fonts.googleapis.com/css2?family=Forum&family=Rubik:wght@400;500&display=swap'); */

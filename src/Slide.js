@@ -6,7 +6,7 @@ export default function Slide({ page, index, isInViewport }) {
 
   return (
     <div
-      className="snap-start relative h-1/2 lg:h-[700px] w-screen bg-cover bg-center grow shrink-0"
+      className="snap-start flex flex-col items-center justify-center h-[350px] md:h-[500px] lg:h-[700px] w-screen bg-cover bg-center grow shrink-0"
       style={{
         backgroundImage: `linear-gradient(rgba(27, 33, 52, 0.5), rgba(27, 33, 52, 0.5)), url(${
           page._embedded['wp:featuredmedia'] &&
@@ -14,20 +14,19 @@ export default function Slide({ page, index, isInViewport }) {
         }`,
       }}
     >
-      <div className="lg:mx-44 text-white w-full">
-        <div
-          ref={ref}
-          className="mt-36 ml-5 lg:m-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2"
-        >
+      <div className="text-white w-full">
+        <div ref={ref} className="w-full">
           <div
-            className="lg:max-w-5xl md:text-4xl font-forum text-3xl lg:text-6xl lg:mb-8"
+            className="max-w-[75%] m-auto md:text-4xl font-forum text-3xl font-semibold lg:text-6xl lg:mb-8 [&_p]:text-shadow"
             dangerouslySetInnerHTML={{ __html: page.excerpt.rendered }}
           ></div>
-          <a href={page.link} className="mb-8">
-            <button className="mt-5 h-12 w-48 bg-white/100 text-darkBlue font-medium rounded-full">
-              Learn more
-            </button>
-          </a>
+          <div className="max-w-[75%] mx-auto">
+            <a href={page.link} className="mb-8">
+              <button className="mt-5 h-10 w-36 md:h-12 md:w-48 bg-white/100 text-darkBlue font-medium rounded-full">
+                Learn more
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
