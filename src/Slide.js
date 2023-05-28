@@ -15,8 +15,9 @@ export default function Slide({ page, index, isInViewport }) {
       }}
     >
       <div className="text-white w-full">
-        <div ref={ref} className="w-full">
+        <div className="w-full">
           <div
+            ref={ref}
             className="max-w-[75%] m-auto md:text-4xl font-forum text-3xl font-semibold lg:text-6xl lg:mb-8 [&_p]:text-shadow"
             dangerouslySetInnerHTML={{ __html: page.excerpt.rendered }}
           ></div>

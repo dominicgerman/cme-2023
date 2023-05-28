@@ -53,6 +53,8 @@ function Banner() {
     }
   }, [])
 
+  console.log(`slideIndex: ${slideIndex}`)
+
   return (
     <div className="relative h-[350px] md:h-[500px] lg:h-[700px]">
       <button
