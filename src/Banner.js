@@ -4,7 +4,7 @@ import Slide from './Slide'
 
 function Banner() {
   let API_URL =
-    'http://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=126&_embed'
+    'https://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=126&_embed'
 
   if (process.env.NODE_ENV === 'development') {
     API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=126&_embed'
