@@ -37,7 +37,7 @@
     },
     "color": {
       "background": true,
-      "text": false,
+      "text": true,
       "link": false,
       "custom": false,
       "defaultPalette": false,
