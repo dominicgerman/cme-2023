@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section>
-    <div class="h-[350px] md:h-[500px] lg:h-[700px] relative">
+    <div class="h-[350px] md:h-[500px] lg:h-[42vw] relative">
         <div id="render-react-slider"></div>
     </div>
 

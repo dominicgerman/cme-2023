@@ -6,7 +6,7 @@ export default function Slide({ page, index, isInViewport }) {
 
   return (
     <div
-      className="snap-start flex flex-col items-center justify-center h-[350px] md:h-[500px] lg:h-[700px] w-screen bg-cover bg-center grow shrink-0"
+      className="snap-start flex flex-col items-center justify-center h-[350px] md:h-[500px] lg:h-[42vw] w-screen bg-cover bg-center grow shrink-0"
       style={{
         backgroundImage: `linear-gradient(rgba(27, 33, 52, 0.5), rgba(27, 33, 52, 0.5)), url(${
           page._embedded['wp:featuredmedia'] &&

@@ -4,10 +4,10 @@ import Slide from './Slide'
 
 function Banner() {
   let API_URL =
-    'https://cme.kodadesigns.net/wp-json/wp/v2/pages?parent=126&_embed'
+    'https://constellationensemble.org/wp-json/wp/v2/pages?parent=126&_embed'
 
   if (process.env.NODE_ENV === 'development') {
-    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=126&_embed'
+    API_URL = 'https://cme.local/wp-json/wp/v2/pages?parent=126&_embed'
   }
 
   const [slideIndex, setSlideIndex] = useState(0)
@@ -53,10 +53,8 @@ function Banner() {
     }
   }, [])
 
-  console.log(`slideIndex: ${slideIndex}`)
-
   return (
-    <div className="relative h-[350px] md:h-[500px] lg:h-[700px]">
+    <div className="relative h-[350px] md:h-[500px] lg:h-[42vw]">
       <button
         className={`hidden lg:block h-12 w-12 rounded-full ${
           slideIndex > 0 ? arrow.enabled.bg : arrow.disabled.bg
