@@ -7,7 +7,7 @@ function Banner() {
     'https://constellationensemble.org/wp-json/wp/v2/pages?parent=126&_embed'
 
   if (process.env.NODE_ENV === 'development') {
-    API_URL = 'https://cme.local/wp-json/wp/v2/pages?parent=126&_embed'
+    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=126&_embed'
   }
 
   const [slideIndex, setSlideIndex] = useState(0)
