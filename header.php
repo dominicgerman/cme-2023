@@ -35,7 +35,7 @@
         <nav class="hidden peer-checked:flex flex-col items-center justify-center gap-6 fixed top-0 left-1/2 -translate-x-1/2 text-2xl bg-white h-screen w-screen z-30 lg:flex lg:flex-row lg:static lg:text-lg lg:gap-12 lg:bg-opacity-0 lg:h-auto lg:w-auto lg:translate-x-0">
             <div class="relative text-center lg:text-start">
                 <a href="/season" class="peer py-2 <?php if (is_page('season') || $parentId == 6) echo $navActive ?>">Season</a>
-                <div class="lg:hidden hover:flex peer-hover:flex flex-col lg:absolute top-full w-max text-xl lg:text-lg bg-white bg-opacity-80 rounded-sm p-2 lg:shadow-md list-none">
+                <div class="hidden lg:hover:flex lg:peer-hover:flex flex-col lg:absolute top-full w-max text-xl lg:text-lg bg-white bg-opacity-80 rounded-sm p-2 lg:shadow-md list-none">
                     <?php wp_list_pages(array(
                         'title_li' => '',
                         'child_of' => 6,
@@ -45,7 +45,7 @@
             </div>
             <div class="relative text-center lg:text-start">
                 <a href="/about" class="peer py-2 inline-block <?php if (is_page('about') || $parentId == 9) echo $navActive ?>">About</a>
-                <div class="lg:hidden hover:flex peer-hover:flex flex-col lg:absolute top-full w-max text-xl lg:text-lg bg-white bg-opacity-80 rounded-sm p-2 lg:shadow-md list-none">
+                <div class="hidden lg:hover:flex lg:peer-hover:flex flex-col lg:absolute top-full w-max text-xl lg:text-lg bg-white bg-opacity-80 rounded-sm p-2 lg:shadow-md list-none">
                     <?php wp_list_pages(array(
                         'title_li' => '',
                         'child_of' => 9,
