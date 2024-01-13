@@ -55,6 +55,7 @@
             </div>
             <a href="/listen" class="peer py-2 <?php if (is_page('listen')  || $parentId == 11) echo $navActive ?>">Listen</a>
             <a href="/support" class="peer py-2 <?php if (is_page('support') || $parentId == 13) echo $navActive ?>">Support</a>
+            <a href="https://merchlink.com/collections/constellation-men-s-ensemble" class="peer py-2">Merch</a>
             <button class="bg-darkBlue text-white px-6 py-2 rounded-full">
                 <a href="https://interland3.donorperfect.net/weblink/WebLink.aspx?name=E353170&id=3" target="_blank">Give</a>
             </button>
