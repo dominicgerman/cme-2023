@@ -12,6 +12,9 @@
                 <p>
                     <a href="<?php echo get_home_url(); ?>/support#page-content">Supporters</a>
                 </p>
+                <p>
+                    <a href="mailto:info@constellationensemble.org">Contact Us</a>
+                </p>
             </div>
             <div class="flex items-start gap-4 lg:justify-end col-span-4">
                 <a href="https://www.facebook.com/constellationensemble" target="_blank">
