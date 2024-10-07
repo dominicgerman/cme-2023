@@ -1,41 +1,41 @@
-import { React, useState, useEffect, useRef } from 'react'
-import isOnScreen from './isVisible'
-import Slide from './Slide'
+import { React, useState, useEffect, useRef } from "react";
+import isOnScreen from "./isVisible";
+import Slide from "./Slide";
 
 function Banner() {
   let API_URL =
-    'https://constellationensemble.org/wp-json/wp/v2/pages?parent=126&_embed'
+    "https://constellationensemble.org/wp-json/wp/v2/pages?parent=126&_embed";
 
-  if (process.env.NODE_ENV === 'development') {
-    API_URL = 'http://cme.local/wp-json/wp/v2/pages?parent=126&_embed'
+  if (process.env.NODE_ENV === "development") {
+    API_URL = "http://cme.local/wp-json/wp/v2/pages?parent=126&_embed";
   }
 
-  const [slideIndex, setSlideIndex] = useState(0)
-  const [slideComponents, setSlideComponents] = useState([])
-  const slider = useRef(null)
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideComponents, setSlideComponents] = useState([]);
+  const slider = useRef(null);
   const arrow = {
     enabled: {
-      bg: 'bg-lightBlue',
-      stroke: '#FFF',
-      strokeOpacity: '1',
+      bg: "bg-lightBlue",
+      stroke: "#FFF",
+      strokeOpacity: "1",
     },
     disabled: {
-      bg: 'bg-gray/50',
-      stroke: 'rgba(33, 33, 33, 0.65)',
-      strokeOpacity: '0.65',
+      bg: "bg-gray/50",
+      stroke: "rgba(33, 33, 33, 0.65)",
+      strokeOpacity: "0.65",
     },
-  }
+  };
 
   const isInViewport = (ref, index) => {
     if (isOnScreen(ref) === true) {
-      setSlideIndex(index)
+      setSlideIndex(index);
     }
-  }
+  };
 
   useEffect(async () => {
     try {
-      const response = await fetch(API_URL)
-      const pagesArray = await response.json()
+      const response = await fetch(API_URL);
+      const pagesArray = await response.json();
       setSlideComponents(
         pagesArray
           .toSorted((a, b) => a.menu_order - b.menu_order)
@@ -47,11 +47,11 @@ function Banner() {
               isInViewport={isInViewport}
             />
           ))
-      )
+      );
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }, [])
+  }, []);
 
   return (
     <div className="relative h-[350px] md:h-[500px] lg:h-[42vw]">
@@ -61,8 +61,11 @@ function Banner() {
         } absolute top-1/2 left-16 -translate-y-1/2 z-10`}
         onClick={() => {
           if (slideIndex > 0) {
-            setSlideIndex(slideIndex - 1)
-            slider.current.scroll(slider.current.scrollLeft - 1000, 0)
+            setSlideIndex(slideIndex - 1);
+            slider.current.scroll(
+              slider.current.scrollLeft - window.visualViewport.width,
+              0
+            );
           }
         }}
       >
@@ -91,7 +94,7 @@ function Banner() {
       </button>
       <div
         ref={slider}
-        className="flex h-[350px] md:h-[500px] lg:h-[750px] overflow-y-hidden overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
+        className="flex h-[350px] md:h-[500px] lg:h-full overflow-y-hidden overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
       >
         {slideComponents}
       </div>
@@ -103,8 +106,11 @@ function Banner() {
         } absolute top-1/2 right-16 -translate-y-1/2`}
         onClick={() => {
           if (slideIndex < slideComponents?.length - 1) {
-            setSlideIndex(slideIndex + 1)
-            slider.current.scroll(slider.current.scrollLeft + 1000, 0)
+            setSlideIndex(slideIndex + 1);
+            slider.current.scroll(
+              slider.current.scrollLeft + window.visualViewport.width,
+              0
+            );
           }
         }}
       >
@@ -138,13 +144,13 @@ function Banner() {
           <div
             key={slideComponent.key}
             className={`h-3 w-3 border-white rounded-full border-2 ${
-              slideIndex === i ? 'bg-darkGray' : 'bg-white'
+              slideIndex === i ? "bg-darkGray" : "bg-white"
             }`}
           ></div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Banner
+export default Banner;
