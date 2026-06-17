@@ -18,8 +18,8 @@
     <div class="relative flex items-center shadow-sm h-16 lg:h-20 justify-between bg-white lg:max-w-[1280px] lg:px-10 mx-auto">
         <a href="<?php echo get_home_url(); ?>">
             <div class="flex items-center gap-2 lg:gap-4 pl-4 lg:pl-0">
-                <img src="<?php echo get_site_icon_url(); ?>" alt="Constellation men's Ensemble logo" class="h-10 w-10 lg:h-14 lg:w-14">
-                <span class="text-black font-forum font-normal text-xl lg:text-3xl">Constellation Men's Ensemble</span>
+                <img src="<?php echo get_site_icon_url(); ?>" alt="Constellation Ensemble logo" class="h-10 w-10 lg:h-14 lg:w-14">
+                <span class="text-black font-forum font-normal text-xl lg:text-3xl">Constellation Ensemble</span>
             </div>
         </a>
         <input type="checkbox" class="opacity-0 peer absolute right-4 h-10 w-10 lg:hidden z-50" />
